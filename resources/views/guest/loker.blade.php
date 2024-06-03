@@ -17,8 +17,8 @@
                 <div class="card mb-3 px-3 py-2 hover-card" style="max-width: 640px;  margin: 10px">
                     <div class="row g-0">
                         <div class="col-md-4 d-flex justify-content-center align-items-center">
-                            <a href="{{ asset('storage/files/' . $loker->image) }}" target="_blank">
-                                <img src="{{ asset('storage/files/' . $loker->image) }}" class="img-fluid rounded shadow"
+                            <a href="{{ asset($loker->image) }}" target="_blank">
+                                <img src="{{ asset($loker->image) }}" class="img-fluid rounded shadow"
                                     alt="..." style="max-height: 180px;">
                             </a>
                         </div>

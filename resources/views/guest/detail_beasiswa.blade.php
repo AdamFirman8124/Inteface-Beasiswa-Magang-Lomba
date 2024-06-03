@@ -13,7 +13,7 @@
         {{-- Content --}}
         <div class="row">
             <div class="col-md-4 mb-3 mb-md-0">
-                <img src="{{ asset('storage/files/' . $beasiswa->image) }}"
+                <img src="{{ asset($beasiswa->image) }}"
                     class="img-fluid rounded shadow p-3 rounded rounded-4 bg-white" alt="..." style="max-width: 100%;">
             </div>
 

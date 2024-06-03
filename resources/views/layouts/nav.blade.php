@@ -2,7 +2,7 @@
     @auth
         <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #D6F0F3; padding: 1rem;">
             <div class="container">
-                <a href="{{ route('beasiswas.index') }}">
+                <a href="{{ route('admin.beasiswa') }}">
                     <img class="img" style="width: 80%" src="{{ asset('assets/logo-siuns.webp') }}"
                         alt="image">
                 </a>
@@ -15,12 +15,14 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item col-2 col-md-auto fs-6"><a href="{{ route('beasiswas.index') }}"
+                        <li class="nav-item col-2 col-md-auto fs-6"><a href="{{ route('admin.beasiswa') }}"
                                 class="nav-link">Beasiswa</a></li>
-                        <li class="nav-item col-2 col-md-auto fs-6"><a href="{{ route('lombas.index') }}"
+                        <li class="nav-item col-2 col-md-auto fs-6"><a href="{{ route('admin.lomba') }}"
                                 class="nav-link">Lomba</a></li>
-                        <li class="nav-item col-2 col-md-auto fs-6"><a href="{{ route('lokers.index') }}"
+                        <li class="nav-item col-2 col-md-auto fs-6"><a href="{{ route('admin.loker') }}"
                                 class="nav-link">Lowongan Kerja</a></li>
+                        <li class="nav-item col-2 col-md-auto fs-6"><a href="{{ route('admin.laporan') }}"
+                                class="nav-link">Rekapan</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
