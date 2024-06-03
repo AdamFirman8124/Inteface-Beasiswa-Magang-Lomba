@@ -62,6 +62,19 @@
                         </div>
 
                         <div class="row mb-3">
+                            <label for="secret_code" class="col-md-4 col-form-label text-md-end">{{ __('Kode Rahasia (Optional)') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="secret_code" type="text" class="form-control @error('secret_code') is-invalid @enderror" name="secret_code">
+                                @error('secret_code')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
                             <label for="role" class="col-md-4 col-form-label text-md-end">{{ __('Role') }}</label>
 
                             <div class="col-md-6">

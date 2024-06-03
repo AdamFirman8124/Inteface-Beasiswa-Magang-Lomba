@@ -39,13 +39,15 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        Log::info('Validating registration data:', $data);
-        
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users', 'regex:/^[a-zA-Z0-9_.+-]+@student\.[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'role' => ['required', 'in:guest,admin'],
+            'secret_code' => ['required', 'string', function ($attribute, $value, $fail) {
+                if ($value !== 'rahasia') {
+                    $fail('Kode rahasia salah atau tidak valid.');
+                }
+            }],
         ]);
     }
 
@@ -63,7 +65,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'role' => $data['role'],
+            'role' => $data['secret_code'] === 'rahasia' ? 'admin' : 'guest',
         ]);
     }
 
